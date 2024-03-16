@@ -68,11 +68,18 @@ services:
       HASURA_GRAPHQL_JWT_SECRET: ${HASURA_GRAPHQL_JWT_SECRET}
       HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET}
       AUTH_CLIENT_URL: ${AUTH_CLIENT_URL:-http://localhost:3000}
-      AUTH_SMTP_HOST: mailhog
-      AUTH_SMTP_PORT: 1025
-      AUTH_SMTP_USER: user
-      AUTH_SMTP_PASS: password
-      AUTH_SMTP_SENDER: mail@example.com
+      AUTH_SERVER_URL: ${AUTH_CLIENT_URL:-http://localhost:3000}
+      AUTH_EMAIL_PASSWORDLESS_ENABLED: 'true'
+      AUTH_SMTP_HOST: smtp.gmail.com
+      AUTH_SMTP_PORT: 587
+      AUTH_SMTP_USER: mohamadmahdifarokhi@gmail.com
+      AUTH_SMTP_PASS: jyzugzjlawchhpua
+      AUTH_SMTP_SENDER: mohamadmahdifarokhi@gmail.com
+    #      AUTH_SMTP_HOST: mailhog
+    #      AUTH_SMTP_PORT: 1025
+    #      AUTH_SMTP_USER: user
+    #      AUTH_SMTP_PASS: password
+    #      AUTH_SMTP_SENDER: mail@example.com
     expose:
       - 4000
     labels:
